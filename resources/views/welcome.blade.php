@@ -76,6 +76,9 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+
+                    <a href="{{ route('customer.loginform') }}">Customer Login</a>
+                    <a href="{{ route('customer.registerform') }}">Customer Register</a>
                 </div>
             @endif
 

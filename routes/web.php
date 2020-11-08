@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/customer/login', 'CustomerLoginController@showLoginForm')->name('customer.loginform');
+Route::get('/customer/register', 'CustomerLoginController@showRegisterForm')->name('customer.registerform');
+Route::post('/customer/login', 'CustomerLoginController@login')->name('customer.login');
+Route::post('/customer/register', 'CustomerLoginController@register')->name('customer.register');
+Route::get('/customer/home', 'CustomerLoginController@index')->middleware('auth:customer');
+Route::get('/customer/logout', 'CustomerLoginController@logout')->name('customer.logout');
